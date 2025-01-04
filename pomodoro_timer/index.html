@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="timer-container">
+    <h1>Pomodoro Timer</h1>
+    <!--make toggle button centered-->
+    
+    <div class="theme-switch-wrapper">
+        <div class="theme-switch">
+          <input type="checkbox" id="themeToggle">
+          <label for="themeToggle"></label>
+        </div>
+      </div>
+      
+
+        <input type="number" id="minutesInput" placeholder="Enter minutes" value="25">
+        <button id="setTimer">Set Timer</button>
+
+        <div id="timer">25:00</div>
+
+        <button class="button" id="start">Start</button>
+        <button class="button" id="pause">Pause</button>
+        <button class="button" id="reset">Reset</button>
+
+        <div class="progress-ring">
+            <svg>
+                <circle class="progress-ring__circle" cx="75" cy="75" r="70"></circle>
+            </svg>
+        </div>
+    </div> 
+  <script src="script.js"></script>
+</body>
+</html>

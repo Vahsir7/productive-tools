@@ -1,0 +1,154 @@
+/* style.css */
+/* Basic Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #e0ffff, #cce0ff); /* Light background */
+    background-size: 400% 400%; /* Adjust for gradient animation */
+    animation: gradientAnimation 15s ease infinite; /* Add animation */
+    transition: background-color 0.5s ease; /* Add transition for theme switch */
+  }
+  
+  .timer-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: background-color 0.5s ease; /* Add transition for theme switch */
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Timer Display */
+  #timer {
+    font-size: 4em;
+    font-weight: bold;
+    color: #2196f3; /* Primary Color */
+    margin-bottom: 30px;
+  }
+  
+  /* Control Buttons */
+  .button {
+    background-color: #2196f3; /* Primary Color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #1976d2; /* Darker Primary Color */
+  }
+  
+  /* Optional: Progress Ring */
+  .progress-ring {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    position: relative;
+    margin: 20px auto;
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .progress-ring__circle {
+    stroke: #2196f3; /* Primary Color */
+    stroke-width: 10;
+    fill: transparent;
+    stroke-dasharray: 440; /* Circumference of the circle */
+    stroke-dashoffset: 440; /* Hide the circle initially */
+    transition: stroke-dashoffset 0.3s ease-in-out;
+  }
+  
+  /* Active Timer Style (Add this class dynamically) */
+  .active {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Theme Switch */
+  .theme-switch {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; 
+  }
+  
+  .theme-switch input[type="checkbox"] { 
+    display: none; 
+  }
+  
+  .theme-switch label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px; 
+    background-color: #ccc; 
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .theme-switch label:before { 
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease; 
+  }
+  
+  .theme-switch input[type="checkbox"]:checked + label {
+    background-color: #2196f3; 
+  }
+  
+  .theme-switch input[type="checkbox"]:checked + label:before {
+    transform: translateX(30px); 
+  }
+  
+  /* Dark Theme (applied when checkbox is checked) */
+  body.dark-theme {
+    /* ... your existing dark theme styles ... */
+    background: linear-gradient(to bottom, #121212, #242424); /* Dark background */
+  }
+  
+  /* Gradient Animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
